@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Omnitrix</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        .alien {
+            background-color: brown;
+            height: 50%;
+            width: 25%;
+            padding: 10px;
+        }
+
+        .alien p {
+            display: block;
+            color: white;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .selected {
+            background-color: limegreen;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Alien selecionado</h1>
+    <div class="alien" id="alienContainer">
+        <p id="cromatico">cromatico</p>
+        <p id="enormosauru">enormosauru</p>
+        <p id="xrl8">xrl8</p>
+        <p id="quatro-bracos">quatro braços</p>
+        <p id="diamante">diamante</p>
+        <p id="insectoide">insectoide</p>
+        <p id="luciano-hulk">luciano hulk</p>
+        <p id="la-ele">la ele</p>
+        <p id="magal">magal</p>
+        <p id="alien-x">alien x</p>
+    </div>
+
+    <script>
+        const aliens = document.querySelectorAll('.alien p');
+
+        aliens.forEach(alien => {
+            alien.addEventListener('click', () => {
+                aliens.forEach(a => a.classList.remove('selected'));
+                alien.classList.add('selected');
+            });
+        });
+    </script>
+
+</body>
+</html>
